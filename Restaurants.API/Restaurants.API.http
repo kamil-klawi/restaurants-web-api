@@ -1,0 +1,22 @@
+@host = http://localhost
+@port = 5128
+@Restaurants.API_HostAddress = {{host}}:{{port}}
+
+GET {{Restaurants.API_HostAddress}}/weatherforecast/
+Accept: application/json
+ProjectUrl: {{$projectUrl}}
+Guid: {{$guid}}
+LocalDate: {{$datetime}}
+Random-int: {{$randomInt}}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast/generate?count=3
+Content-Type: application/json
+
+{
+  "minTemperature": -20,
+  "maxTemperature": 20
+}
+
+###
